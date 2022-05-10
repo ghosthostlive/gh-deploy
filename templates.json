@@ -9,7 +9,7 @@
       "platform": "linux",
       "logo": "",
       "repository": {
-        "url": "https://github.com/ghosthostlive/gh-deploy",
+        "url": "https://github.com/ghosthostlive/gh-deploy/",
         "stackfile": "docker-stack.yml"
       },
       "env": [
