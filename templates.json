@@ -1,0 +1,49 @@
+{
+  "version": "2",
+  "templates": [
+    {
+      "type": 2,
+      "title": "Ghosthost Bot",
+      "description": "Start a Ghosthost bot.",
+      "categories": [],
+      "platform": "linux",
+      "logo": "",
+      "repository": {
+        "url": "https://github.com/ghosthostlive/gh-deploy",
+        "stackfile": "docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "BOT_NAME",
+          "label": "Twitch bot name",
+          "description": "Name of the bot used for administration."
+        },
+        {
+          "name": "BOT_OAUTH",
+          "label": "Twitch bot OAuth key",
+          "description": ""
+        },
+        {
+          "name": "USER_NAME",
+          "label": "Twitch broadcaster's username",
+          "description": ""
+        },
+        {
+          "name": "USER_OAUTH",
+          "label": "Twitch broadcaster's OAuth key",
+          "description": ""
+        },
+        {
+          "name": "PANEL_USER_NAME",
+          "label": "Username for Ghosthost bot login",
+          "description": ""
+        },
+        {
+          "name": "PANEL_PASSWORD",
+          "label": "Password for Ghosthost bot login",
+          "description": ""
+        }
+      ]
+    }
+  ]
+}
