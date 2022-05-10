@@ -25,22 +25,57 @@
         },
         {
           "name": "USER_NAME",
-          "label": "Twitch broadcaster's username",
-          "description": ""
+          "label": "Twitch username",
+          "description": "Twitch broadcaster's username"
         },
         {
           "name": "USER_OAUTH",
-          "label": "Twitch broadcaster's OAuth key",
-          "description": ""
+          "label": "OAuth key",
+          "description": "Twitch broadcaster's OAuth key"
         },
         {
           "name": "PANEL_USER_NAME",
-          "label": "Username for Ghosthost bot login",
-          "description": ""
+          "label": "Bot admin username",
+          "description": "Username for Ghosthost bot login"
         },
         {
           "name": "PANEL_PASSWORD",
-          "label": "Password for Ghosthost bot login",
+          "label": "Bot admin password",
+          "description": "Password for Ghosthost bot login"
+        },
+        {
+          "name": "RESTART_CMD",
+          "label": "Restart command path",
+          "description": "Path to restart script (if required)"
+        },
+        {
+          "name": "TILTIFY_TOKEN",
+          "label": "Tiltify token",
+          "description": ""
+        },
+        {
+          "name": "TWITTER_ACCESS_TOKEN",
+          "label": "Twitter access token",
+          "description": ""
+        },
+        {
+          "name": "TWITTER_CONSUMER_KEY",
+          "label": "Twitter consumer key",
+          "description": ""
+        },
+        {
+          "name": "TWITTER_CONSUMER_SECRET",
+          "label": "Twitter consumer secret",
+          "description": ""
+        },
+        {
+          "name": "TWITTER_SECRET_TOKEN",
+          "label": "Twitter secret token",
+          "description": ""
+        },
+        {
+          "name": "TWITTER_USER",
+          "label": "Twitter user",
           "description": ""
         }
       ]
