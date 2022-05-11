@@ -35,7 +35,7 @@ services:
           memory: 100M
       labels:
       - traefik.http.services.gh-${USER_NAME}.loadbalancer.server.port=25000
-      - traefik.http.routers.gh-${USER_NAME}.rule=Host(`${HOSTNAME}`)
+      - traefik.http.routers.gh-${USER_NAME}.rule=Host(`${HOST_NAME}`)
       - traefik.http.routers.gh-${USER_NAME}.entrypoints=http
       - traefik.http.routers.gh-${USER_NAME}.entrypoints=https
       - traefik.http.routers.gh-${USER_NAME}.tls=true
