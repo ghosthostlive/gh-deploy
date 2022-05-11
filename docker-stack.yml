@@ -21,10 +21,9 @@ services:
       PHANTOMBOT_TWITTER_CONSUMER_SECRET: ${TWITTER_CONSUMER_SECRET}
       PHANTOMBOT_TWITTER_SECRET_TOKEN: ${TWITTER_SECRET_TOKEN}
       PHANTOMBOT_TWITTERUSER: ${TWITTER_USER}
-
-youtubekey=TOKEN
+      PHANTOMBOT_YOUTUBEKEY: ${YOUTUBE_KEY}
     networks:
-       - traefik-public
+      - traefik-public
     deploy:
       replicas: 1
       restart_policy:
