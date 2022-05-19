@@ -42,3 +42,4 @@ services:
       - traefik.http.routers.gh-${USER_NAME}.tls.certresolver=le
       - traefik.http.middlewares.gh-${USER_NAME}.redirectscheme.scheme=https
       - traefik.http.middlewares.gh-${USER_NAME}.redirectscheme.permanent=true
+      - traefik.constraint-label=traefik-public
