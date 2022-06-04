@@ -35,16 +35,17 @@ services:
         reservations:
           memory: 100M
       labels:
-      - traefik.enable=true
-      - traefik.http.services.gh-${USER_NAME}.loadbalancer.server.port=25000
-      - traefik.http.routers.gh-${USER_NAME}.rule=Host(`${HOST_NAME}`)
-      - traefik.http.routers.gh-${USER_NAME}.entrypoints=http
-      - traefik.http.routers.gh-${USER_NAME}.entrypoints=https
-      - traefik.http.routers.gh-${USER_NAME}.tls=true
-      - traefik.http.routers.gh-${USER_NAME}.tls.certresolver=le
-      - traefik.http.middlewares.gh-${USER_NAME}.redirectscheme.scheme=https
-      - traefik.http.middlewares.gh-${USER_NAME}.redirectscheme.permanent=true
-      - traefik.constraint-label=traefik-public
+        - traefik.enable=true
+        - traefik.constraint-label=traefik-public
+        - traefik.docker.network=traefik-public
+        - traefik.http.routers.gh-${USER_NAME}-http.entrypoints=http
+        - traefik.http.routers.gh-${USER_NAME}-http.middlewares=https-redirect
+        - traefik.http.routers.gh-${USER_NAME}-http.rule=Host(`${HOST_NAME}`)
+        - traefik.http.routers.gh-${USER_NAME}-https.entrypoints=https
+        - traefik.http.routers.gh-${USER_NAME}-https.rule=Host(`${HOST_NAME}`)
+        - traefik.http.routers.gh-${USER_NAME}-https.tls=true
+        - traefik.http.routers.gh-${USER_NAME}-https.tls.certresolver=le
+        - traefik.http.services.gh-${USER_NAME}.loadbalancer.server.port=25000
 
 networks:
   traefik-public:
