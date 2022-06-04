@@ -4,7 +4,7 @@ services:
   ghosthost-bot:
     image: 245045109982.dkr.ecr.eu-west-2.amazonaws.com/ghosthost:latest
     volumes:
-      - /mnt/efs/clients/${USERNAME}:/opt/PhantomBot_data
+      - ghdata:/opt/PhantomBot_data
     environment:
       PHANTOMBOT_USER: ${BOT_NAME}
       PHANTOMBOT_OAUTH: ${BOT_OAUTH}
@@ -12,7 +12,8 @@ services:
       PHANTOMBOT_APIOAUTH: ${USER_OAUTH}
       PHANTOMBOT_PANELUSER: ${PANEL_USER_NAME}
       PHANTOMBOT_PANELPASSWORD: ${PANEL_PASSWORD}
-      PHANTOMBOT_USEHTTPS: "false"
+      PHANTOMBOT_USEHTTPS: 'false'
+      PHANTOMBOT_PROXYBYPASSHTTPS: 'true'
       PHANTOMBOT_DISCORD_TOKEN: ${DISCORD_TOKEN}
       PHANTOMBOT_RESTARTCMD: ${RESTART_CMD}
       PHANTOMBOT_TILTIFY_TOKEN: ${TILTIFY_TOKEN}
@@ -34,6 +35,7 @@ services:
         reservations:
           memory: 100M
       labels:
+      - traefik.enable=true
       - traefik.http.services.gh-${USER_NAME}.loadbalancer.server.port=25000
       - traefik.http.routers.gh-${USER_NAME}.rule=Host(`${HOST_NAME}`)
       - traefik.http.routers.gh-${USER_NAME}.entrypoints=http
@@ -43,3 +45,15 @@ services:
       - traefik.http.middlewares.gh-${USER_NAME}.redirectscheme.scheme=https
       - traefik.http.middlewares.gh-${USER_NAME}.redirectscheme.permanent=true
       - traefik.constraint-label=traefik-public
+
+networks:
+  traefik-public:
+    external: true
+
+volumes:
+  ghdata:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /mnt/efs/clients/${USER_NAME}
