@@ -15,43 +15,35 @@
       "env": [
         {
           "name": "HOST_NAME",
-          "label": "Host name",
-          "description": "Domain name for the bot."
+          "label": "Host name (Required)",
+          "description": "Domain name for the bot.",
+          "default": "USER_NAME.ghostghost.live"
         },
         {
           "name": "BOT_NAME",
-          "label": "Twitch bot name",
+          "label": "Twitch bot name (Required)",
           "description": "Name of the bot used for administration."
         },
         {
-          "name": "BOT_OAUTH",
-          "label": "Twitch bot OAuth key",
-          "description": ""
-        },
-        {
           "name": "USER_NAME",
-          "label": "Twitch username",
-          "description": "Twitch broadcaster's username"
+          "label": "Twitch user name (Required)",
+          "description": "Twitch broadcaster's user name"
         },
         {
-          "name": "USER_OAUTH",
-          "label": "OAuth key",
-          "description": "Twitch broadcaster's OAuth key"
-        },
-        {
-          "name": "PANEL_USER_NAME",
-          "label": "Bot admin username",
+          "name": "PANEL_USER_NAME (Required)",
+          "label": "Bot admin user name",
           "description": "Username for Ghosthost bot login"
         },
         {
-          "name": "PANEL_PASSWORD",
+          "name": "PANEL_PASSWORD (Required)",
           "label": "Bot admin password",
           "description": "Password for Ghosthost bot login"
         },
         {
           "name": "RESTART_CMD",
           "label": "Restart command path",
-          "description": "Path to restart script (if required)"
+          "description": "Path to restart script (if required)",
+          "default": "/opt/PhantomBot/restartbot-docker.sh"
         },
         {
           "name": "TILTIFY_TOKEN",
