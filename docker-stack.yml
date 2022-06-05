@@ -6,6 +6,7 @@ services:
     volumes:
       - ghdata:/opt/PhantomBot_data
     environment:
+      PHANTOMBOT_ENVOVERRIDE: 'true'
       PHANTOMBOT_USER: ${BOT_NAME}
       PHANTOMBOT_OAUTH: ${BOT_OAUTH}
       PHANTOMBOT_CHANNEL: ${USER_NAME}
