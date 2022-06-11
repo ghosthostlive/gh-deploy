@@ -32,7 +32,10 @@ services:
         limits:
           memory: 256M
         reservations:
-          memory: 100M
+          memory: 200M
+      placement:
+        constraints:
+          - "node.role!=manager"
       labels:
         - traefik.enable=true
         - traefik.constraint-label=traefik-public
