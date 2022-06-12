@@ -30,13 +30,13 @@
           "description": "Twitch broadcaster's user name"
         },
         {
-          "name": "PANEL_USER_NAME (Required)",
-          "label": "Bot admin user name",
+          "name": "PANEL_USER_NAME",
+          "label": "Bot admin user name (Required)",
           "description": "Username for Ghosthost bot login"
         },
         {
-          "name": "PANEL_PASSWORD (Required)",
-          "label": "Bot admin password",
+          "name": "PANEL_PASSWORD",
+          "label": "Bot admin password (Required)",
           "description": "Password for Ghosthost bot login"
         },
         {
@@ -44,6 +44,11 @@
           "label": "Restart command path",
           "description": "Path to restart script (if required)",
           "default": "/opt/PhantomBot/restartbot-docker.sh"
+        },
+        {
+          "name": "DISCORD_TOKEN",
+          "label": "Discord token",
+          "description": ""
         },
         {
           "name": "TILTIFY_TOKEN",
