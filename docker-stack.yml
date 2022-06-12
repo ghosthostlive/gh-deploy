@@ -24,6 +24,12 @@ services:
       PHANTOMBOT_YOUTUBEKEY: ${YOUTUBE_KEY}
     networks:
       - traefik-public
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:25000"]
+      interval: 1m
+      timeout: 10s
+      retries: 3
+      start_period: 40s
     deploy:
       replicas: 1
       restart_policy:
