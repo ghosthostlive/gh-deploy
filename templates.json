@@ -25,8 +25,8 @@
           "description": "Name of the bot used for administration."
         },
         {
-          "name": "USER_NAME",
-          "label": "Twitch user name (Required)",
+          "name": "CHANNEL_NAME",
+          "label": "Twitch channel name (Required. This name is also used for the EFS folder name)",
           "description": "Twitch broadcaster's user name"
         },
         {
@@ -38,6 +38,11 @@
           "name": "PANEL_PASSWORD",
           "label": "Bot admin password (Required)",
           "description": "Password for Ghosthost bot login"
+        },
+        {
+          "name": "TFM_LOGIN_HASH",
+          "label": "File manager admin hash (Required) https://tinyfilemanager.github.io/docs/pwd.html",
+          "description": "Generate secure password hash - https://tinyfilemanager.github.io/docs/pwd.html"
         },
         {
           "name": "RESTART_CMD",

@@ -10,7 +10,7 @@ services:
       PHANTOMBOT_USEHTTPS: 'false'
       PHANTOMBOT_PROXYBYPASSHTTPS: 'true'
       PHANTOMBOT_USER: ${BOT_NAME}
-      PHANTOMBOT_CHANNEL: ${USER_NAME}
+      PHANTOMBOT_CHANNEL: ${CHANNEL_NAME}
       PHANTOMBOT_PANELUSER: ${PANEL_USER_NAME}
       PHANTOMBOT_PANELPASSWORD: ${PANEL_PASSWORD}
       PHANTOMBOT_DISCORD_TOKEN: ${DISCORD_TOKEN}
@@ -22,6 +22,7 @@ services:
       PHANTOMBOT_TWITTER_SECRET_TOKEN: ${TWITTER_SECRET_TOKEN}
       PHANTOMBOT_TWITTERUSER: ${TWITTER_USER}
       PHANTOMBOT_YOUTUBEKEY: ${YOUTUBE_KEY}
+      TFM_LOGIN_HASH: ${TFM_LOGIN_HASH}
     networks:
       - traefik-public
     healthcheck:
@@ -47,14 +48,21 @@ services:
         - traefik.enable=true
         - traefik.constraint-label=traefik-public
         - traefik.docker.network=traefik-public
-        - traefik.http.routers.gh-${USER_NAME}-http.entrypoints=http
-        - traefik.http.routers.gh-${USER_NAME}-http.middlewares=https-redirect
-        - traefik.http.routers.gh-${USER_NAME}-http.rule=Host(`${HOST_NAME}`)
-        - traefik.http.routers.gh-${USER_NAME}-https.entrypoints=https
-        - traefik.http.routers.gh-${USER_NAME}-https.rule=Host(`${HOST_NAME}`)
-        - traefik.http.routers.gh-${USER_NAME}-https.tls=true
-        - traefik.http.routers.gh-${USER_NAME}-https.tls.certresolver=le
-        - traefik.http.services.gh-${USER_NAME}.loadbalancer.server.port=25000
+        - traefik.http.routers.gh-${CHANNEL_NAME}-http.entrypoints=http
+        - traefik.http.routers.gh-${CHANNEL_NAME}-http.middlewares=https-redirect
+        - traefik.http.routers.gh-${CHANNEL_NAME}-http.rule=Host(`${HOST_NAME}`)
+        - traefik.http.routers.gh-${CHANNEL_NAME}-https.entrypoints=https
+        - traefik.http.routers.gh-${CHANNEL_NAME}-https.rule=Host(`${HOST_NAME}`)
+        - traefik.http.routers.gh-${CHANNEL_NAME}-https.tls=true
+        - traefik.http.routers.gh-${CHANNEL_NAME}-https.tls.certresolver=le
+        - traefik.http.routers.gh-${CHANNEL_NAME}-https.service=gh-${CHANNEL_NAME}-pb
+        - traefik.http.routers.gh-${CHANNEL_NAME}-tfm.entrypoints=https
+        - traefik.http.routers.gh-${CHANNEL_NAME}-tfm.rule=Host(`files.${HOST_NAME}`)
+        - traefik.http.routers.gh-${CHANNEL_NAME}-tfm.tls=true
+        - traefik.http.routers.gh-${CHANNEL_NAME}-tfm.tls.certresolver=le
+        - traefik.http.routers.gh-${CHANNEL_NAME}-tfm.service=gh-${CHANNEL_NAME}-tfm
+        - traefik.http.services.gh-${CHANNEL_NAME}-pb.loadbalancer.server.port=25000
+        - traefik.http.services.gh-${CHANNEL_NAME}-tfm.loadbalancer.server.port=80
 
 networks:
   traefik-public:
@@ -66,4 +74,4 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /mnt/efs/clients/${USER_NAME}
+      device: /mnt/efs/clients/${CHANNEL_NAME}
