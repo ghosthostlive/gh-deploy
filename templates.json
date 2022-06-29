@@ -40,9 +40,12 @@
           "description": "Password for Ghosthost bot login"
         },
         {
-          "name": "TFM_LOGIN_HASH",
-          "label": "File manager admin hash (Required) https://tinyfilemanager.github.io/docs/pwd.html",
-          "description": "Generate secure password hash - https://tinyfilemanager.github.io/docs/pwd.html"
+          "name": "DB_PASS",
+          "label": "Database password"
+        },
+        {
+          "name": "FILE_MANAGER_PASSWORD",
+          "label": "File manager password"
         },
         {
           "name": "RESTART_CMD",
