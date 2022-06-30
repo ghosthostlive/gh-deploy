@@ -40,10 +40,6 @@
           "description": "Password for Ghosthost bot login"
         },
         {
-          "name": "DB_PASS",
-          "label": "Database password"
-        },
-        {
           "name": "FILE_MANAGER_PASSWORD",
           "label": "File manager password"
         },

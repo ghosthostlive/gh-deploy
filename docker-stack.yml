@@ -5,6 +5,7 @@ services:
     image: 245045109982.dkr.ecr.eu-west-2.amazonaws.com/ghosthost:latest
     volumes:
       - ghdata:/opt/PhantomBot_data
+      - ghdatabase:/opt/PhantomBot/database
     environment:
       PHANTOMBOT_ENVOVERRIDE: 'true'
       PHANTOMBOT_USEHTTPS: 'false'
@@ -23,12 +24,6 @@ services:
       PHANTOMBOT_TWITTERUSER: ${TWITTER_USER}
       PHANTOMBOT_YOUTUBEKEY: ${YOUTUBE_KEY}
       FILE_MANAGER_PASSWORD: ${FILE_MANAGER_PASSWORD}
-      PHANTOMBOT_DATASTORE: mysqlstore
-      PHANTOMBOT_MYSQLNAME: bot_${CHANNEL_NAME}
-      PHANTOMBOT_MYSQLUSER: ${CHANNEL_NAME}
-      PHANTOMBOT_MYSQLPASS: ${DB_PASS}
-      PHANTOMBOT_MYSQLHOST: mysql_mysql
-      PHANTOMBOT_MYSQLPORT: 3306
     networks:
       - traefik-public
     healthcheck:
@@ -81,3 +76,9 @@ volumes:
       type: none
       o: bind
       device: /mnt/efs/clients/${CHANNEL_NAME}
+  ghdatabase:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: /home/ghosthost/clients/${CHANNEL_NAME}/database
