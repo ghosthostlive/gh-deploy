@@ -45,6 +45,7 @@ services:
       placement:
         constraints:
           - "node.role!=manager"
+          - "node.hostname==gh-node2"
       labels:
         - traefik.enable=true
         - traefik.constraint-label=traefik-public
