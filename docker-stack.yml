@@ -39,9 +39,9 @@ services:
         max_attempts: 5
       resources:
         limits:
-          memory: 256M
+          memory: 300M
         reservations:
-          memory: 200M
+          memory: 256M
       placement:
         constraints:
           - "node.role!=manager"
