@@ -20,14 +20,14 @@
           "default": "CHANNEL_NAME.ghosthost.live"
         },
         {
-          "name": "BOT_NAME",
-          "label": "Twitch bot name (Required)",
-          "description": "Name of the bot used for administration."
-        },
-        {
           "name": "CHANNEL_NAME",
           "label": "Twitch channel name (Required. This name is also used for the EFS folder name)",
           "description": "Twitch broadcaster's user name"
+        },
+        {
+          "name": "BOT_NAME",
+          "label": "Twitch bot name (Required)",
+          "description": "Name of the bot used for administration."
         },
         {
           "name": "PANEL_USER_NAME",
