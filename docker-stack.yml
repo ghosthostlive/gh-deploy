@@ -1,4 +1,4 @@
-version: '3.8'
+version: "3.8"
 
 services:
   ghosthost-bot:
@@ -7,9 +7,9 @@ services:
       - ghdata:/opt/PhantomBot_data
       - ghdatabase:/opt/PhantomBot/database
     environment:
-      PHANTOMBOT_ENVOVERRIDE: 'true'
-      PHANTOMBOT_USEHTTPS: 'false'
-      PHANTOMBOT_PROXYBYPASSHTTPS: 'true'
+      PHANTOMBOT_ENVOVERRIDE: "true"
+      PHANTOMBOT_USEHTTPS: "false"
+      PHANTOMBOT_PROXYBYPASSHTTPS: "true"
       PHANTOMBOT_USER: ${BOT_NAME}
       PHANTOMBOT_CHANNEL: ${CHANNEL_NAME}
       PHANTOMBOT_PANELUSER: ${PANEL_USER_NAME}
@@ -47,7 +47,7 @@ services:
       placement:
         constraints:
           - "node.role!=manager"
-          - "node.hostname==gh-node6"
+          - "node.hostname==gh-node2"
       labels:
         - traefik.enable=true
         - traefik.constraint-label=traefik-public
