@@ -20,14 +20,14 @@
           "default": "CHANNEL_NAME.ghosthost.live"
         },
         {
-          "name": "CHANNEL_NAME",
-          "label": "Twitch channel name (Required. This name is also used for the EFS folder name)",
-          "description": "Twitch broadcaster's user name"
-        },
-        {
           "name": "BOT_NAME",
           "label": "Twitch bot name (Required)",
           "description": "Name of the bot used for administration."
+        },
+        {
+          "name": "CHANNEL_NAME",
+          "label": "Twitch channel name (Required. This name is also used for the EFS folder name)",
+          "description": "Twitch broadcaster's user name"
         },
         {
           "name": "PANEL_USER_NAME",
@@ -44,10 +44,8 @@
           "label": "File manager password"
         },
         {
-          "name": "RESTART_CMD",
-          "label": "Restart command path",
-          "description": "Path to restart script (if required)",
-          "default": "/opt/PhantomBot/restartbot-docker.sh"
+          "name": "MYSQL_PASSWORD",
+          "label": "MySQL Database password (generated)"
         },
         {
           "name": "DISCORD_TOKEN",
@@ -60,34 +58,15 @@
           "description": ""
         },
         {
-          "name": "TWITTER_ACCESS_TOKEN",
-          "label": "Twitter access token",
-          "description": ""
-        },
-        {
-          "name": "TWITTER_CONSUMER_KEY",
-          "label": "Twitter consumer key",
-          "description": ""
-        },
-        {
-          "name": "TWITTER_CONSUMER_SECRET",
-          "label": "Twitter consumer secret",
-          "description": ""
-        },
-        {
-          "name": "TWITTER_SECRET_TOKEN",
-          "label": "Twitter secret token",
-          "description": ""
-        },
-        {
-          "name": "TWITTER_USER",
-          "label": "Twitter user",
-          "description": ""
-        },
-        {
           "name": "YOUTUBE_KEY",
           "label": "Youtube key",
           "description": ""
+        },
+        {
+          "name": "RESTART_CMD",
+          "label": "Restart command path",
+          "description": "Path to restart script (if required)",
+          "default": "/opt/PhantomBot/restartbot-docker.sh"
         }
       ]
     }
