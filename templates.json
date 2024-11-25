@@ -67,6 +67,11 @@
           "label": "Restart command path",
           "description": "Path to restart script (if required)",
           "default": "/opt/PhantomBot/restartbot-docker.sh"
+        },
+        {
+          "name": "JAVA_OTPS",
+          "label": "Additional Java JVM Options",
+          "description": "Any additional or container specific JAVA JVM options."
         }
       ]
     }

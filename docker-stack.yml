@@ -26,6 +26,7 @@ services:
       PHANTOMBOT_MYSQLPORT: 3306
       PHANTOMBOT_MYSQLUSER: ${CHANNEL_NAME}
       FILE_MANAGER_PASSWORD: ${FILE_MANAGER_PASSWORD}
+      JAVA_OPTS: ${JAVA_OPTS}
     networks:
       - traefik-public
     healthcheck:
