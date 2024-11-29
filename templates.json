@@ -72,7 +72,7 @@
           "name": "JAVA_OPTS",
           "label": "Additional Java JVM Options",
           "description": "Any additional or container specific JAVA JVM options.",
-          "default": "-Xmx240M -Dio.netty.allocator.type=unpooled -Dio.netty.noPreferDirect=true -Dio.netty.eventLoopThreads=2"
+          "default": "-Xmx240M"
         }
       ]
     }
